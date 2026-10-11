@@ -4,6 +4,28 @@ This file is the mandatory entry point for AI-assisted development in this repos
 The current repository root (`git rev-parse --show-toplevel`) is the workspace boundary.
 Follow these instructions and read the linked role, workflow and standards files before acting.
 
+## Mandatory Project Standards
+
+All AI roles MUST read and follow these standards
+before performing their assigned responsibilities:
+
+- `.ai/standards/architecture.md`
+- `.ai/standards/clean-code.md`
+- `.ai/standards/java.md`
+- `.ai/standards/testing.md`
+- `.ai/standards/formatting.md`
+- `.ai/standards/git.md`
+- `.ai/standards/documentation.md`
+
+These standards are mandatory.
+
+In case of conflicting instructions, the more restrictive
+security and workspace rules take precedence.
+
+The QA agent MUST verify compliance with all applicable
+standards before approving the implementation for
+Pull Request creation.
+
 ## Non-negotiable rules
 
 1. **Workspace boundary:** Never intentionally read, list, search, create, modify or delete files outside the repository root, including parent/sibling directories, home files, and symlinks resolving outside the root. Do not run unreviewed scripts that violate this rule. If a tool requires external filesystem access, stop and request a specifically scoped exception. This file is policy, **not** an OS sandbox; configure actual sandbox enforcement separately.
@@ -49,3 +71,31 @@ The QA agent MUST verify architectural compliance before
 the Pull Request is marked ready for human review.
 
 Significant architectural changes require explicit human approval.
+
+## Documentation Standards
+
+All AI roles MUST follow the documentation rules defined in:
+
+`.ai/standards/documentation.md`
+
+### Mandatory Requirements
+
+- GitHub Issues and Pull Requests are the primary documentation sources.
+- The Product Manager MUST document requirements and acceptance criteria using the provided GitHub templates.
+- The Development Team MUST document relevant technical decisions and implementation results in the corresponding Tasks.
+- The QA agent MUST document verification results, identified defects, and the final QA status.
+- Every completed Task MUST include a concise implementation summary and test results.
+- Every Pull Request MUST reference its related User Story and Tasks.
+- All development activities MUST be traceable through:
+
+  Feature Request → User Story → Tasks → Commits → QA → Pull Request
+
+- Documentation MUST accurately reflect the work performed.
+- Never invent implementation results, successful tests, or approvals.
+- Never include credentials, tokens, or sensitive information in documentation.
+
+### Quality Gate
+
+Before creating a Pull Request, QA MUST verify that all required documentation is complete and traceable.
+
+Missing or incomplete documentation MUST be corrected before the Pull Request is created.
